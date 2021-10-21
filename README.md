@@ -7,6 +7,10 @@ output:
 
 
 
+# 資料
+
+前にTokyo.Rで話した[スライド](https://speakerdeck.com/kilometer/tokyo-dot-r-number-80-r-interface-to-python)。
+
 # 準備
 
 1. Rをインストール
