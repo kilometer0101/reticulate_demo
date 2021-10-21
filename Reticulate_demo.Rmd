@@ -42,13 +42,6 @@ library(reticulate)
 library(palmerpenguins)
 ```
 
-```{r, eval = T, echo=F}
-pyenv <- "/Users/km_pro/.local/share/virtualenvs/python_training-wsKNqpTU/bin/python"
-
-use_python(python = pyenv,
-           required = TRUE)
-```
-
 ## Python環境を指定
 
 `pipenv --venv`の出力結果に`/bin/python`をくっつけたもの。
