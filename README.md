@@ -145,12 +145,15 @@ df_a %>%
 ## # … with 41 more rows
 ```
 
-numpyのオブジェクトはR側にはマトリックスで渡される。
+## Numpyの受け渡し
+
+numpyのアレイはR側にはマトリックスで渡される。
 
 
 ```python
-x = np.array([range(5)])
-y = np.array([range(15)]).reshape(5, 3)
+x = [0, 1, 2]
+y = np.array([range(5)])
+z = np.array([range(15)]).reshape(5, 3)
 ```
 
 
@@ -158,8 +161,15 @@ y = np.array([range(15)]).reshape(5, 3)
 ```r
 py <- import_main()
 
-x <- py$x
-x
+py$x
+```
+
+```
+## [1] 0 1 2
+```
+
+```r
+py$y
 ```
 
 ```
@@ -168,15 +178,7 @@ x
 ```
 
 ```r
-is.matrix(x)
-```
-
-```
-## [1] TRUE
-```
-
-```r
-py$y
+py$z
 ```
 
 ```
@@ -187,3 +189,31 @@ py$y
 ## [4,]    9   10   11
 ## [5,]   12   13   14
 ```
+
+逆もまた然り。
+
+
+```r
+xx <- c(0:4)
+yy <- matrix(0:14, 3)
+```
+
+
+```python
+r.xx
+```
+
+```
+## [0, 1, 2, 3, 4]
+```
+
+```python
+r.yy
+```
+
+```
+## array([[ 0,  3,  6,  9, 12],
+##        [ 1,  4,  7, 10, 13],
+##        [ 2,  5,  8, 11, 14]], dtype=int32)
+```
+
